@@ -2,7 +2,6 @@
 pragma solidity ^0.8.18;
 
 contract ManualToken {
-
     mapping(address => uint256) private s_balances;
 
     function name() public pure returns (string memory) {
@@ -10,10 +9,10 @@ contract ManualToken {
     }
 
     function totalSupply() public pure returns (uint256) {
-        rerturn 100 ether; // 100000000000000000000
+        return 100 ether; // 100000000000000000000
     }
 
-    function decimals() public pure rreturns (uint8) {
+    function decimals() public pure returns (uint8) {
         return 18;
     }
 
@@ -25,6 +24,6 @@ contract ManualToken {
         uint256 previousBalances = balanceOf(msg.sender) + balanceOf(_to);
         s_balances[msg.sender] -= _amount;
         s_balances[_to] += _amount;
-        require(balanceOf(msg.sender) + balanceOf(_to) == previousBalance);
+        require(balanceOf(msg.sender) + balanceOf(_to) == previousBalances);
     }
 }
